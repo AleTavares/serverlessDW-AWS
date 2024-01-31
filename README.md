@@ -51,5 +51,15 @@ admin_password          = [Senha de Admin da Instancia do Redshift]
 redshift_workgroup_name = [Workgroup da Instancia do Redshift]
 base_capacity           = [RPUs da instancia]
 acasso_publico_redshift = [A INstancia do Redshift vai ser publica? default False]
-
 ```
+- Crie o par de chaves na AWS( https://docs.aws.amazon.com/pt_br/IAM/latest/UserGuide/id_credentials_access-keys.html )
+- Abra o Terminal e digite os comandos:
+```bash
+export AWS_ACCESS_KEY_ID=[Access Key criada na AWS]
+export AWS_SECRET_ACCESS_KEY=[Secret Key criada na AWS]
+terraform init
+terraform plan -out plan.out
+terraform apply plan.out
+```
+## Próximos passos
+Embreve vou liberar um repositorio com o MWAA( AirFlow ) e vamos utilizar ele para levar os dados do S3 para o ReadShift
